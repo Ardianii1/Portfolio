@@ -1,0 +1,67 @@
+interface SanityBody {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _updatedAt: string;
+}
+
+interface Image {
+  _type: "image";
+  asset: {
+    _ref: string;
+    _type: "reference";
+  };
+}
+
+export interface PageInfo extends SanityBody {
+  _type: "pageInfo";
+  address: string;
+  backgroungInformation: string;
+  email: string;
+  role: string;
+  heroImage: Image;
+  name: string;
+  phoneNumber: string;
+  profilePic: Image;
+}
+
+export interface Technology extends SanityBody {
+  _typE: "skill";
+  image: Image;
+  progress: number;
+  title: string;
+}
+
+export interface Skill extends SanityBody {
+  _typE: "skill";
+  image: Image;
+  progres: number;
+  title: string;
+}
+
+export interface Experience extends SanityBody {
+  _typE: "experience";
+  company: string;
+  title: string;
+  companyImage: Image;
+  dateStarted: date;
+  dateEnded: date;
+  isCurrentlyWorkingHere: boolean;
+  jobTitle: string;
+  points: string[];
+  technologies: Technology[];
+}
+export interface Project extends SanityBody {
+  title: string;
+  _typE: "project";
+  image: Image;
+  linkToBuild: string;
+  summary: string;
+  technologies: Technology[];
+}
+
+export interface Social extends SanityBody {
+  _typE: "social";
+  title: string;
+  url: string;
+}
